@@ -13,14 +13,14 @@ To install run:
 
 ## Usage
 
-To create or update the file `rates.csv` with the latest treasury rate, run the following command:
+To create or update the file `rates.csv` with the latest treasury rates, run the following command:
 
 
 ~~~
 > dailytreasuryrates rates.csv
 ~~~
 
-This will look for the `rates.csv` file in the current folder and append any new data that is available for downloaded on the US treasury site. You can also specify a fully qualitied path like `C:\dataset\myrates.csv` if you want to maintain the rates files at a specific location.
+This will look for the `rates.csv` file in the current folder and append any new data that is available for download on the US treasury site. You can also specify a fully qualitied path like `C:\dataset\myrates.csv` if you want to maintain the rates files at a different location.
 
 A common usage for the rates-file it to load it into Python with Pandas for processing:
 
