@@ -1,10 +1,11 @@
 [tool.poetry]
 name = "dailytreasuryrates"
-version = "0.1.0"
+version = "0.1.4"
 description = "Daily Treasury Rates Downloader"
 authors = ["Thijs van den Berg <thijs@sitmo.com>"]
 license = "MIT"
 readme = "README.md"
+include = ["src/dailytreasuryrates-cache.csv"]
 
 [tool.poetry.dependencies]
 python = "^3.8"

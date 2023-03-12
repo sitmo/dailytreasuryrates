@@ -20,10 +20,19 @@ To create or update the file `rates.csv` with the latest treasury rate, run the 
 > dailytreasuryrates rates.csv
 ~~~
 
-This will look for the `rates.csv` file in the current folder and append it with new data downloaded from the US treasury site. You can also specify a fully qualitied path like `C:\dataset\myrates.csv`.
+This will look for the `rates.csv` file in the current folder and append any new data that is available for downloaded on the US treasury site. You can also specify a fully qualitied path like `C:\dataset\myrates.csv` if you want to maintain the rates files at a specific location.
+
+A common usage for the rates-file it to load it into Python with Pandas for processing:
+
+~~~
+import pandas as pd
+
+df = pd.read_csv('rates.csv', parse_dates=["Date"]).set_index("Date")
+~~~
+
 
 ## Output format
-he output file is a `csv` file.
+The output file is a `csv` file.
 
 ~~~
 Date,1 Mo,2 Mo,3 Mo,4 Mo,6 Mo,1 Yr,2 Yr,3 Yr,5 Yr,7 Yr,10 Yr,20 Yr,30 Yr

@@ -39,7 +39,7 @@ def parse_args():
 
 def load_cache():
     logging.info(f"Reading cache")
-    stream = pkg_resources.resource_stream(__name__, 'cache.csv')
+    stream = pkg_resources.resource_stream(__name__, 'dailytreasuryrates-cache.csv')
     df = pd.read_csv(stream, parse_dates=["Date"]).set_index("Date").sort_index()
     logging.debug(f"Read {len(df)} lines.")
     logging.debug(f"Last date is {df.index[-1]}.")
