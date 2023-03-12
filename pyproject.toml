@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dailytreasuryrates"
-version = "0.1.5"
+version = "0.1.6"
 description = "Daily Treasury Rates Downloader"
 authors = ["Thijs van den Berg <thijs@sitmo.com>"]
 license = "MIT"

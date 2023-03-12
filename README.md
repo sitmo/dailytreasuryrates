@@ -1,6 +1,6 @@
 # Daily Treasury Rates Downloader
 
-A simple command line tool for downloading or updating daily treasury rates.
+A simple command line tool for downloading or updating daily US interest rates (Par Yield Curve Rates) from the US Department of the Treasury.
 
 
 ## Installation
@@ -31,7 +31,7 @@ df = pd.read_csv('rates.csv', parse_dates=["Date"]).set_index("Date")
 ~~~
 
 
-## Output format
+## Output format details
 The output file is a `csv` file.
 
 ~~~
@@ -43,9 +43,16 @@ Date,1 Mo,2 Mo,3 Mo,4 Mo,6 Mo,1 Yr,2 Yr,3 Yr,5 Yr,7 Yr,10 Yr,20 Yr,30 Yr
 2023-03-07,4.8,4.88,5.04,5.12,5.32,5.22,5.0,4.66,4.31,4.17,3.97,4.11,3.88
 ~~~
 
-The first columns contains the date in `yyyy-mm-dd` format. 
+* The first columns contains the date in `yyyy-mm-dd` format. 
+* Dates are sorted in ascending order.
+* The first date is Jan 2nd 1990.
+* The number of tenors has grown over time. E.g. in 1990 there was no `1 Month` and `2 Month` tennor, but now there is. These missing values for older dates have empty string in the csv file, as can be seen in the snipped above.
 
-Dates are sorted in ascending order.
 
-Over time new tenors were added. E.g. in 1990 there was no `1 Month` and `2 Month` tennor, but now there is. These missing values have empty string in the csv file.
+## Download details
 
+Data gets downloaded from the U.S. DEPARTMENT OF THE TREASURY
+: Daily Treasury Par Yield Curve Rates
+
+
+[https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily\_treasury\_yield\_curve](https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve)
