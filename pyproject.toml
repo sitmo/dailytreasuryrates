@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dailytreasuryrates"
-version = "0.1.7"
+version = "0.2.0"
 description = "Daily Treasury Rates Downloader"
 authors = ["Thijs van den Berg <thijs@sitmo.com>"]
 license = "MIT"
@@ -10,7 +10,7 @@ include = ["src/dailytreasuryrates-cache.csv"]
 [tool.poetry.dependencies]
 python = "^3.8"
 argparse = "^1.1.0"
-pandas = "^1.1.2"
+pandas = "^2.0"
 
 [build-system]
 requires = ["poetry-core"]
