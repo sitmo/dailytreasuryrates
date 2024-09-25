@@ -10,7 +10,7 @@ if [ -z "$1" ]; then
 fi
 
 # Bump version using Poetry
-new_version=$(poetry version "$1" | awk '{print $2}')
+new_version=$(poetry version "$1" | awk '{print $NF}')
 echo "New version: $new_version"
 
 # Create a Git tag (e.g., v1.2.3)
