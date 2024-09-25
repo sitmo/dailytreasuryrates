@@ -20,11 +20,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'  # You can set your preferred Python version
+          python-version: '3.x'
 
       - name: Install Poetry
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install Poetry Trusted Publisher Plugin
+        run: poetry self add poetry-plugin-publish
 
       - name: Install dependencies
         run: poetry install --no-interaction --no-ansi
@@ -32,5 +35,5 @@ jobs:
       - name: Build the package
         run: poetry build
 
-      - name: Publish to PyPI
+      - name: Publish to PyPI using OIDC
         run: poetry publish --build
